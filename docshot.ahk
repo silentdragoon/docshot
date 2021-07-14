@@ -60,8 +60,8 @@ FileToClipboard(PathToCopy,Method="copy")
 ;   CHANGE THE KEY BINDING HERE by replacing the F12 with a key of your choice. Remember to keep the :: bit at the end.
 ;   Some options for you to copy paste, one per line:
 ;   F13
-;    ^!{ScrollLock}
-;   ^!{F12}
+;    ^!Insert
+;   ^!F12
 ;
 F12::
 
@@ -74,7 +74,8 @@ MyVideos := MyVideos . "\Captures\"
 ;  no quotation marks needed for that one
 ;   alternatively, you can do something like
 ;   "D:/Pictures"
-;   or whatever. Just make sure the directory actually exists!
+;   or whatever. Just make sure the directory actually exists! 
+;   And some folders aren't allowed, like C:/, without admin access which the script doesn't ask for.
 ;
 OutputDir := A_Desktop
 
