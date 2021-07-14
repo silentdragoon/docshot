@@ -1,6 +1,6 @@
 # docshot
 
-It's DocShot!
+It's docshot!
 
 To run this .ahk file, you'll need AutoHotKey 1.something, whatever the latest version is that isn't 2.something.
 
