@@ -2,7 +2,7 @@
 
 It's docshot!
 
-To run this .ahk file, you'll need AutoHotKey 1.something, whatever the latest version is that isn't 2.something.
+To run this .ahk file, you'll need AutoHotKey 1.something, whatever the latest version is that isn't 2.something. [Download here](https://autohotkey.com/download/)
 
 By default, pressing F12 will take a pair of screenshots (HDR and SDR) using Windows Game Bar, copy the SDR one to the clipboard for postin' on Twitter and copy both of them to a directory of the user's choice (currently I:/). 
 
