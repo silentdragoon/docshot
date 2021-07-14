@@ -55,21 +55,28 @@ FileToClipboard(PathToCopy,Method="copy")
    return
    }
 
-^!2::
 
-Reload
-
-^!3::
-
-
-
-Exit
-
+;
+;   CHANGE THE KEY BINDING HERE by replacing the F12 with a key of your choice. Remember to keep the :: bit at the end.
+;   Some options for you to copy paste, one per line:
+;   F13
+;    ^!{ScrollLock}
+;   ^!{F12}
+;
 F12::
 
 RegRead, MyVideos, HKCU, Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders, My Video
 MyVideos := MyVideos . "\Captures\"
-OutputDir := "I:\"
+;
+;   CHANGE THE OUTPUT DIRECTORY HERE
+;   YOU CAN USE MAGIC TO select your desktop by replacing the bit after the := with
+;   A_DESKTOP
+;  no quotation marks needed for that one
+;   alternatively, you can do something like
+;   "D:/Pictures"
+;   or whatever. Just make sure the directory actually exists!
+;
+OutputDir := A_Desktop
 
 Send, #!{PrintScreen} 
 Sleep, 500
@@ -88,7 +95,7 @@ Loop, %MyVideos%*.*
 FullPath := MyVideos . Out
 FullPathSDR := StrReplace(FullPath, ".jxr", ".png")
 
-MsgBox, %FullPath%
+; MsgBox, %FullPath%
 FileToClipboard(FullPathSDR)
 FileCopy, %FullPath%, %OutputDir%
 FileCopy, %FullPathSDR%, %OutputDir%
