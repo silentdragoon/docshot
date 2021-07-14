@@ -69,7 +69,7 @@ F12::
 
 RegRead, MyVideos, HKCU, Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders, My Video
 MyVideos := MyVideos . "\Captures\"
-OutputDir := "C:\"
+OutputDir := "I:\"
 
 Send, #!{PrintScreen} 
 Sleep, 500
@@ -85,10 +85,10 @@ Loop, %MyVideos%*.*
 	}
 }
 
-FullPath := "C:\Users\silen\Videos\Captures\" . Out
+FullPath := MyVideos . Out
 FullPathSDR := StrReplace(FullPath, ".jxr", ".png")
 
-;MsgBox, %FullPath%
+MsgBox, %FullPath%
 FileToClipboard(FullPathSDR)
 FileCopy, %FullPath%, %OutputDir%
 FileCopy, %FullPathSDR%, %OutputDir%
